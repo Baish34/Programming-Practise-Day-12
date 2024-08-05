@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <button id="count1">Increment Count 1</button>
+  <button id="count2">Increment Count 2</button>
+  <p id="count1Result">
+    Count 1:
+  </p>
+  <p id="count2Result">
+    Count 2:
+  </p>
+  <p id="comparisonResult">
+  </p>
+
+  <script>
+
+    let count1Value = 0;
+    let count2Value = 0;
+
+
+    const count1 = document.querySelector("#count1")
+    const count2 = document.querySelector("#count2")
+    const count1Result = document.querySelector("#count1Result")
+    const count2Result = document.querySelector("#count2Result")
+    const comparisonResult = document.querySelector("#comparisonResult");
+
+
+    count1.addEventListener("click", function () {
+      count1Value++;
+      count1Result.textContent = "Count 1: " + count1Value;
+      updateComparisonResult();
+    })
+
+    count2.addEventListener("click", function () {
+      count2Value++;
+      count2Result.textContent = "Count 2: " + count2Value;
+      updateComparisonResult();
+    })
+
+    function updateComparisonResult() {
+      if (count1Value > count2Value) {
+        comparisonResult.textContent = "Count 1 is more than count 2";
+      } else if (count1Value < count2Value) {
+        comparisonResult.textContent = "Count 2 is more than count 1";
+      } else {
+        comparisonResult.textContent = "Count 1 is equal to count 2";
+      }
+    }
+
+
+  </script>
+</body>
+
+</html>
